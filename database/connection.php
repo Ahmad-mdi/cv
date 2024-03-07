@@ -46,4 +46,13 @@ function getSkills($connection)
     ];
 }
 
+function getAwards($connection){
+    $select = mysqli_query($connection, "select * from awards");
+    $data = [];
+    while ($row = mysqli_fetch_array($select)){
+        $data[] = $row;
+    }
+    return $data;
+}
+
 
